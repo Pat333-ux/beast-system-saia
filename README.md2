@@ -1,0 +1,30 @@
+# BEAST System - SAIA (Sovereign Autonomous Intelligence Architecture)
+
+`beast-system-saia` is the core workspace and engine driving the Sovereign Autonomous Digital Governance Platform. It automates public benefit distribution, streamlines intake and submission workflows, and manages secure, audit-ready infrastructure integrations.
+
+## Platform Modules
+
+- **Governance Engine (`apps/governance-engine`)**: Core decision engine executing autonomous policy rules and benefit distribution verification.
+- **Submission Gateway (`apps/submission-gateway`)**: Ingestion service handling intake forms, automated validation, and cryptographic audit proofs.
+- **Web Dashboard (`apps/web-dashboard`)**: Front-end portal for platform oversight, analytics, and operational tracking.
+- **Smart Contracts (`packages/smart-contracts`)**: On-chain registries for verifiable audit trails and state proofs.
+- **Infrastructure (`packages/infrastructure`)**: Cloud provisioning configs (Google Cloud Run, Cloud SQL PostgreSQL).
+
+## Getting Started
+
+### Prerequisites
+- Node.js >= 20.x
+- Docker & Docker Compose
+- Google Cloud SDK / GCP Access
+
+### Local Setup
+```bash
+# Clone repository
+git clone [https://github.com/PAT333-UX/beast-system-saia.git](https://github.com/PAT333-UX/beast-system-saia.git)
+cd beast-system-saia
+
+# Install dependencies across workspaces
+npm install
+
+# Run local development services via Docker Compose
+docker-compose up -d
