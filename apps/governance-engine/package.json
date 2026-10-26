@@ -1,0 +1,15 @@
+{
+  "name": "@beast-saia/governance-engine",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Sovereign Governance Engine & Policy Evaluation Module",
+  "main": "src/rules/benefitsEvaluator.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.2.0"
+  }
+}
