@@ -1,0 +1,46 @@
+beast-system-saia/
+├── .github/
+│   └── workflows/
+│       ├── ci-cd.yml                # Automated build, test, & Cloud Run deployment
+│       └── lint-compliance.yml       # Compliance, security, & policy check
+├── apps/
+│   ├── governance-engine/            # Sovereign Governance Engine (Policy Rules & Execution)
+│   │   ├── src/
+│   │   │   ├── core/                # Core autonomous state machine & workflows
+│   │   │   ├── rules/               # Rule evaluation engines for public benefits
+│   │   │   └── index.ts
+│   │   ├── Dockerfile
+│   │   └── package.json
+│   ├── submission-gateway/           # Public Submissions & Intake API Service
+│   │   ├── src/
+│   │   │   ├── routes/              # Intake endpoints & Webhook listeners
+│   │   │   ├── validation/          # Intake payload validation & hashing
+│   │   │   └── index.ts
+│   │   ├── Dockerfile
+│   │   └── package.json
+│   └── web-dashboard/                # Next.js Admin & Citizen Portal UI
+│       ├── src/
+│       ├── package.json
+│       └── next.config.js
+├── packages/
+│   ├── shared-types/                 # Shared Types (Schemas, Data Models, Protocol Interfaces)
+│   ├── smart-contracts/              # On-chain / Decentralized Verification & Registry Protocols
+│   │   ├── contracts/
+│   │   │   ├── GovernanceRegistry.sol
+│   │   │   └── PublicBenefitDistributor.sol
+│   │   ├── hardhat.config.ts
+│   │   └── package.json
+│   └── infrastructure/               # Infrastructure as Code (Terraform / GCP Cloud Run / DB)
+│       ├── main.tf
+│       └── variables.tf
+├── config/
+│   ├── default-policy.json           # Default benefit qualification rules & thresholds
+│   └── platform.config.ts            # Core runtime constants
+├── docs/
+│   ├── ARCHITECTURE.md               # System architecture & data flow docs
+│   └── GOVERNANCE_FRAMEWORK.md       # Platform operational procedures & audit standards
+├── .env.example
+├── .gitignore
+├── docker-compose.yml                # Local end-to-end development environment
+├── package.json                      # Workspace configuration (npm/pnpm/yarn)
+└── README.md
