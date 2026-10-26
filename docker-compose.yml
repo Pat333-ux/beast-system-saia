@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  submission-gateway:
+    build:
+      context: .
+      dockerfile: apps/submission-gateway/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - NODE_ENV=development
+      - DATABASE_URL=postgres://saia_user:saia_password@db:5432/beast_saia
+    depends_on:
+      - db
+
+  governance-engine:
+    build:
+      context: .
+      dockerfile: apps/governance-engine/Dockerfile
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=postgres://saia_user:saia_password@db:5432/beast_saia
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15-alpine
+    container_name: beast_saia_db
+    environment:
+      POSTGRES_USER: saia_user
+      POSTGRES_PASSWORD: saia_password
+      POSTGRES_DB: beast_saia
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
