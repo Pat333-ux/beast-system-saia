@@ -1,0 +1,21 @@
+{
+  "name": "beast-system-saia",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Core workspace for the Sovereign Autonomous Digital Governance Platform",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "dev": "npm run dev --workspaces",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "contracts:compile": "npm --prefix packages/smart-contracts run compile"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.0",
+    "prettier": "^3.0.0"
+  }
+}
